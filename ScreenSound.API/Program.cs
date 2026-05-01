@@ -8,12 +8,13 @@ using (HttpClient client = new HttpClient())
     {
         string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;
-        musicas[1].ExibirDetalhes();
+        //musicas[1].ExibirDetalhes();
         //LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
         //LinqOrder.ExibirListaDeArtistasOrdenados(musicas);
         //LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "rock");
         //LinqFilter.FiltrarMusicasDeUmArtista(musicas, "Michel Teló");
         //LinqFilter.FiltrarMusicasPorAno(musicas, "2010");
+        LinqFilter.FiltrarMusicasPorTonalidade(musicas, "C#");
 
         //var musicasPreferidasGustavo = new MusicasPreferidas("Gustavo");
 
